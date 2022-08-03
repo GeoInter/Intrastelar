@@ -24,7 +24,7 @@ jobs:
       run: mvn -B clean package
       
     - name: Release
-      uses: softprops/action-gh-release@v1
+      uses: softprops/action-gh-release@latest
       if: startsWith(github.ref, 'refs/tags/')
       with:
         files: |
