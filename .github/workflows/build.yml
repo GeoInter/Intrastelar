@@ -5,11 +5,10 @@ name: Build (Java CI with Maven)
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, feature/auto-release ]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -20,6 +19,7 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
         cache: maven
+
     - name: Build with Maven
       run: mvn -B clean package
       
@@ -27,7 +27,7 @@ jobs:
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
         automatic_release_tag: "latest"
-        prerelease: true
+        prerelease: false
         title: "Development Build"
         files: |
           *.jar
