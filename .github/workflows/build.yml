@@ -3,6 +3,10 @@
 
 name: Build (Java CI with Maven)
 
+permissions:
+  issues: read
+  pull-requests: read
+
 on:
   push:
     branches: [ main, feature/auto-release ]
