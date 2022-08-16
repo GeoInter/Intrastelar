@@ -27,8 +27,7 @@ jobs:
   create-release:
     name: Create GitHub Release
     runs-on: ubuntu-latest
-    needs: [bump-version, changelog]
-    if: needs.bump-version.outputs.new-version != ''
+    needs: [build]
     steps:
       - name: New Version
         env:
@@ -38,6 +37,6 @@ jobs:
         id: create-release
         uses: marvinpinto/action-automatic-releases@latest
         with:
-          automatic_release_tag: ${{needs.bump-version.outputs.new-version}}
+          automatic_release_tag: "latest"
           repo_token: ${{ github.token }}
           prerelease: true
