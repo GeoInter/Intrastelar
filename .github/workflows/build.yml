@@ -28,11 +28,14 @@ jobs:
     name: Create GitHub Release
     runs-on: ubuntu-latest
     needs: [build]
-    if: contains( github.ref, 'refs/tags/v' )
     steps:
       - name: Create Release
         id: create-release
         uses: marvinpinto/action-automatic-releases@latest
         with:
-          repo_token: ${{ github.token }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
           prerelease: true
+          automatic_release_tag: "latest_dev"
+          files: |
+            *.jar
+            *.zip
