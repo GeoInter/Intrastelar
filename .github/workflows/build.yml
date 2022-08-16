@@ -24,8 +24,13 @@ jobs:
       run: mvn -B clean package
       
     - name: Create a Release
-      uses: elgohr/Github-Release-Action@v4
-      env:
-        GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+      id: create-release
+      uses: "marvinpinto/action-automatic-releases@latest"
       with:
-        title: MyReleaseMessage
+        repo_token: "${{ github.token }}"
+        automatic_release_tag: "latest"
+        prerelease: true
+        title: "Development Build"
+        files: |
+          *.jar
+          *.zip
