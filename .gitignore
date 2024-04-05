@@ -1,5 +1,7 @@
 # maven
 /target
+/out
+/libs
 
 # doxygen documentation
 /doc
