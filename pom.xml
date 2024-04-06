@@ -10,7 +10,7 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <javafx.version>18</javafx.version> <!-- version of fxml files overridden by scene builder (and its version)-->
-        <antlr.version>4.11.1</antlr.version>
+        <antlr.version>4.13.1</antlr.version>
         <!-- Refers to the JDK on the system.
           The JRE in the final zip will be bundled from the system's JDK -->
         <sys.java.home>${env.JAVA_HOME}</sys.java.home>
@@ -48,8 +48,8 @@
           <version>0.7.0</version>
         </dependency>
         <dependency>
-          <groupId>org.antlr</groupId>
-          <artifactId>antlr4-runtime</artifactId>
+          <groupId>org.antlr.antlr4.runtime</groupId>
+          <artifactId>antlr4-runtime.fat</artifactId>
           <version>${antlr.version}</version>
       </dependency>
       <dependency>

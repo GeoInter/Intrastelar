@@ -117,6 +117,6 @@
     <maven.compiler.source>11</maven.compiler.source>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <javafx.version>18</javafx.version>
-    <antlr.version>4.11.1</antlr.version>
+    <antlr.version>4.13.1</antlr.version>
   </properties>
 </project>

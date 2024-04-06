@@ -4,3 +4,19 @@ mvn org.apache.maven.plugins:maven-install-plugin:3.1.1:install-file  -Dfile="C:
                                                                               -Dversion="0.11.2" 
                                                                               -Dpackaging="jar" 
                                                                               -DgeneratePom=true
+																			  
+
+
+jdeps --generate-module-info . C:\Users\Besitzer\.m2\repository\org\antlr\antlr4-runtime\4.11.1\antlr4-runtime-4.11.1.jar
+jdeps --generate-module-info .\src\org C:\Users\Besitzer\.m2\repository\org\antlr\antlr4-runtime\4.11.1\antlr4-runtime-4.11.1.jar
+
+
+ javac --patch-module org.antlr.antlr4.runtime=C:\Users\Besitzer\.m2\repository\org\antlr\antlr4-runtime\4.11.1\antlr4-runtime-4.11.1.jar .\org.antlr.antlr4.runtime\module-info.java
+ 
+ 
+ mvn org.apache.maven.plugins:maven-install-plugin:3.1.1:install-file  -Dfile="C:\Users\Besitzer\legV8_simulator\libs\antlr4-runtime-4.13.1.jar" 
+                                                                              -DgroupId="org.antlr.antlr4.runtime"
+                                                                              -DartifactId="antlr4-runtime.fat" 
+                                                                              -Dversion="4.13.1" 
+                                                                              -Dpackaging="jar" 
+                                                                              -DgeneratePom=true
